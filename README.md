@@ -2,7 +2,7 @@
 
 <!-- Frame Player Logo -->
 <p align="center">
-    <img src="../frame-player/src/assets/Logo.png" alt="Logo">
+    <img src="./src/assets/Logo.png" alt="Logo">
 </p>
 <!-- Frame Player Logo -->
 
