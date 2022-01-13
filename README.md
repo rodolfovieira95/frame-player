@@ -15,6 +15,7 @@ Frame by frame player.
 ```
 
 `frames: Array<String>`: List of urls of images to be displayed.
+
 `fps: number`: How many frames per second that should be displayed.
 
 ## Bootstraped wit `create-react-app`
