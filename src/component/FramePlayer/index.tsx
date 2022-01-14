@@ -2,23 +2,20 @@ import { useEffect, useRef, useState } from "react";
 
 import {
   Button,
-  Container,
-  ControlContainer,
-  Slide,
-  SliderContent,
+  ExhibitionArea,
+  Controls,
+  Frame,
+  FramesContainer,
 } from "./style";
 import { Props } from "./types";
 import { counterToTime, getCurrentFrame } from "./interface";
 
-import { ProgressBar } from "../Slider";
+import { ProgressBar } from "../ProgressBar";
 import Play from "../../assets/play.svg";
 import Pause from "../../assets/pause.svg";
 
 export const FramePlayer = ({ frames, fps }: Props) => {
-  const [state, setState] = useState({
-    isPlaying: false,
-    counter: 0,
-  });
+  const [state, setState] = useState({ isPlaying: false, counter: 0 });
   const { isPlaying, counter } = state;
 
   const timerRef = useRef<number>();
@@ -57,27 +54,30 @@ export const FramePlayer = ({ frames, fps }: Props) => {
 
   return (
     <>
-      <Container>
-        <SliderContent
+      <ExhibitionArea data-testid="exhibition-area">
+        <FramesContainer
           width={getWidth() * frames.length}
           currentFrame={getCurrentFrame(fps, counter)}
         >
           {frames.map((frame, i) => (
-            <Slide key={i} frame={frame} />
+            <Frame key={i} frame={frame} />
           ))}
-        </SliderContent>
-      </Container>
+        </FramesContainer>
+      </ExhibitionArea>
+
       <ProgressBar
         counter={counter}
         setState={setState}
         finishCounter={(1 / fps) * frames.length}
       />
-      <ControlContainer>
+
+      <Controls data-testid="controls">
         <Button onClick={playFunction}>
           <PlayPauseIcon />
         </Button>
-        <div>{counterToTime(counter)}</div>
-      </ControlContainer>
+
+        {counterToTime(counter)}
+      </Controls>
     </>
   );
 };
