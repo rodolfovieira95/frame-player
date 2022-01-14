@@ -8,6 +8,10 @@
 
 Frame by frame player.
 
+## Demo
+
+![demo](https://media.giphy.com/media/nZH6Im8BMXChY9hJoA/giphy.gif)
+
 ## Usage
 
 ```
