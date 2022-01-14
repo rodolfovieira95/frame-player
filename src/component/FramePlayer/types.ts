@@ -8,8 +8,6 @@ export type SlideProps = {
 };
 
 export type SliderContentProps = {
-  customTranslate: number;
-  transition: number;
   width: number;
   currentFrame: number;
 };
