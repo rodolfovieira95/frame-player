@@ -1,8 +1,12 @@
-export type CurrentProgressProps = {
-  width: number;
-};
+import { Dispatch, SetStateAction } from "react";
 
-export type SliderPointerProps = {
-  pos1: number;
-  pos2: number;
+export type Props = {
+  counter: number;
+  finishCounter: number;
+  setState: Dispatch<
+    SetStateAction<{
+      isPlaying: boolean;
+      counter: number;
+    }>
+  >;
 };
