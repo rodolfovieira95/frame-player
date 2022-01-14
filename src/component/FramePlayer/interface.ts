@@ -4,3 +4,9 @@ export const counterToTime = (counter: number) => {
 
   return date.toISOString().substr(11, 8);
 };
+
+export const getCurrentFrame = (fps: number, counter: number) => {
+  const timeToChangeFrame = 1 / fps;
+  const quociente = Math.trunc(counter / timeToChangeFrame);
+  return quociente;
+};
