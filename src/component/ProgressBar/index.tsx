@@ -3,6 +3,7 @@ import { Props } from "./types";
 
 export const ProgressBar = ({ counter, setState, finishCounter }: Props) => {
   const onChangeHandler = (value: number) => {
+    console.log("chamou");
     setState((currState) => ({
       ...currState,
       counter: value,
@@ -10,7 +11,7 @@ export const ProgressBar = ({ counter, setState, finishCounter }: Props) => {
   };
 
   return (
-    <ProgressContainer>
+    <ProgressContainer data-testid="progress-bar">
       <input
         type="range"
         min={0}
